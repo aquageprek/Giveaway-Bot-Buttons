@@ -57,6 +57,9 @@ client.color = "#303136";
 // Default footer for your embed
 client.footer = 'Made By Aayu#0552';
 
+// Default footer for your embed
+client.image = 'Made By Aayu#0552';
+
 // Connecting handlers
 const handlerFolder = fs
 	.readdirSync('./Structures/Handlers')
@@ -87,13 +90,13 @@ client.manager.on("GiveawayReady", (name) => {
   console.log(`Giveaway System is Ready`);
 });
 client.manager.on("GiveawayStarted", (message, giveaway) => {
-  // console.log("GiveawayStarted");
+  console.log("GiveawayStarted");
   message.reply({
     embeds: [embed.setDescription(`Giveaway Started`)],
   });
 });
 client.manager.on("GiveawayWinner", (message, giveaway) => {
-  // console.log("GiveawayWinner");
+  console.log("GiveawayWinner");
   let Gwinners = giveaway.winners
     .map((winner) => `<@${winner.userID}>`)
     .join(", ");
@@ -118,7 +121,7 @@ client.manager.on("GiveawayWinner", (message, giveaway) => {
   });
 });
 client.manager.on("GiveawayRerolled", (message, giveaway) => {
-  // console.log("GiveawayRerolled");
+  console.log("GiveawayRerolled");
   message.reply({
     embeds: [embed.setDescription(`\`${giveaway.prize}\` Giveaway Rerolled`)],
   });
